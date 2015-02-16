@@ -9,9 +9,15 @@ $(document).ready(function() {
     $("#task").val("");
 
     $(".to-do-list").last().click(function(li) {
-      $(li.target).remove();
+      $(li.target).appendTo(".done-list");
 
+      $(".done-list").last().click(function(li) {
+        $(li.target).remove();
+      });
+      
     });
+
+
 
 
   });
